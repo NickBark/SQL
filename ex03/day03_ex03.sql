@@ -17,5 +17,5 @@ WITH all_visitors AS (
 SELECT pizzeria.name AS pizzeria_name FROM men
 JOIN women ON men.pizzeria_id = women.pizzeria_id
 JOIN pizzeria ON men.pizzeria_id = pizzeria.id
-WHERE men.count_men > women.count_women OR men.count_men < women.count_women
+WHERE men.count_men != women.count_women
 ORDER BY pizzeria_name
