@@ -24,5 +24,5 @@ SELECT
     pizzeria_name_2,
     price
 FROM same_pizza
-WHERE MOD(id,2) = 0
+WHERE MOD(id,2) = 1
 ORDER BY pizza_name
