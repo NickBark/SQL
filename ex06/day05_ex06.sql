@@ -1,7 +1,6 @@
 DROP INDEX IF EXISTS idx_1;
 
-CREATE UNIQUE INDEX IF NOT EXISTS idx_1 ON menu USING BTREE (pizzeria_id, pizza_name)
-WHERE pizzeria_id IN (SELECT id FROM pizzeria);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_1 ON menu USING BTREE (pizzeria_id, pizza_name);
 
 set Enable_seqscan =off;
 EXPLAIN ANALYZE
