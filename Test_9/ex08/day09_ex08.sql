@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION fnc_fibonacci(
+    pstop INTEGER DEFAULT 10
+)
+RETURNS TABLE(x INTEGER) AS
+$$
+WITH RECURSIVE tmp(x,y) AS (
+    SELECT 0 AS x, 1 AS y
+    UNION
+    SELECT y, x+y FROM tmp WHERE y < pstop
+)
+SELECT x FROM tmp
+$$
+LANGUAGE sql;
